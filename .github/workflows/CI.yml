@@ -28,9 +28,7 @@ jobs:
           cache: pip
 
       - name: create virtual environment
-        run: |
-          python -m venv myenv
-          . myenv/bin/pip install -r requirements.txt
+        run: pip install -r requirements.txt
 
       - name: run unit test
-        run: . myenv/bin/pytest --maxfail=1 --disable-warning -q
+        run: pytest --maxfail=1 --disable-warning -q
